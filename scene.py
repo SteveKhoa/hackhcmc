@@ -78,12 +78,6 @@ def infer(model, path, classes):
     return pred
 
 
-def simple_test():
-    PATH = "data/tests/grocery/supermarket0.jpeg"
-    pred = infer(model, PATH, CLASSES)
-    return pred
-
-
 """
 Expected behavior:
     python scene.py grocery.png

@@ -6,3 +6,4 @@ data
 *.svg
 *.webp
 *.zip
+.DS_Store
