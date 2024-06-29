@@ -2,6 +2,8 @@ import torch.utils
 from torch.utils.data import DataLoader
 import torchvision, torch
 import numpy as np
+from torchvision.transforms import v2
+from PIL import Image
 
 class SceneModel(torch.nn.Module):
     def __init__(
@@ -48,3 +50,11 @@ class MobileSceneModel(torch.nn.Module):
         x = self.transforms(x)
         logits = self.model.forward(x)
         return logits
+    
+
+# SETUP MODELS
+MOBILE_SETUP = {
+    "backend": torchvision.models.mobilenet_v3_large(weights=torchvision.models.MobileNet_V3_Large_Weights.DEFAULT),
+    "backend_transform": torchvision.models.MobileNet_V3_Large_Weights.DEFAULT.transforms(),
+    "weight_path": "weights/alo"
+}
