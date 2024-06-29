@@ -52,24 +52,32 @@ class MobileSceneModel(torch.nn.Module):
         return logits
     
 
+# ASSUMPTION
 CLASSES = ['bar-pub', 'grocery', 'restaurant', 'supermarket']
 
 # SETUP MODELs
 backend = torchvision.models.mobilenet_v3_large(weights=torchvision.models.MobileNet_V3_Large_Weights.DEFAULT)
 backend_transform = torchvision.models.MobileNet_V3_Large_Weights.DEFAULT.transforms()
 model = MobileSceneModel(backend, backend_transform, len(CLASSES))
-weight_path = "weights/alo"
+weight_path = "weights/mobilenet.pth"
 state_dict = torch.load(weight_path, map_location=torch.device('cpu'))
-model.load_state_dict(weight_path)
+model.load_state_dict(state_dict)
 
 # SETUP infer
 def infer(model, path, classes):
     model.eval()
     with torch.no_grad():
         image = torchvision.io.read_image(path)
+        image = image.unsqueeze(0)
         logits = model.forward(image)
+
+        print(logits)
 
         argmax = torch.argmax(logits, dim=1)
         pred = classes[argmax]
     
     return pred
+
+PATH = "data/rawtp/grocery/66503732_1705500046412.jpg"
+pred = infer(model, PATH, CLASSES)
+print(pred)
