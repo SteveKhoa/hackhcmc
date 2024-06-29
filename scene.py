@@ -4,6 +4,7 @@ import torchvision, torch
 import numpy as np
 from torchvision.transforms import v2
 from PIL import Image
+from os import sys
 
 class SceneModel(torch.nn.Module):
     def __init__(
@@ -67,17 +68,28 @@ model.load_state_dict(state_dict)
 def infer(model, path, classes):
     model.eval()
     with torch.no_grad():
-        image = torchvision.io.read_image(path)
+        image = torchvision.io.read_image(path, mode=torchvision.io.ImageReadMode.RGB)
         image = image.unsqueeze(0)
         logits = model.forward(image)
-
-        print(logits)
 
         argmax = torch.argmax(logits, dim=1)
         pred = classes[argmax]
     
     return pred
 
-PATH = "data/rawtp/grocery/66503732_1705500046412.jpg"
-pred = infer(model, PATH, CLASSES)
-print(pred)
+
+def simple_test():
+    PATH = "data/tests/grocery/supermarket0.jpeg"
+    pred = infer(model, PATH, CLASSES)
+    return pred
+
+
+"""
+Expected behavior:
+    python scene.py grocery.png
+"""
+if __name__ == "__main__":
+    imagepath = sys.argv[1]
+
+    pred = infer(model, imagepath, CLASSES)
+    print("Prediction: {}".format(pred))
