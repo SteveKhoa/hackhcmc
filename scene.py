@@ -52,9 +52,12 @@ class MobileSceneModel(torch.nn.Module):
         return logits
     
 
-# SETUP MODELS
-MOBILE_SETUP = {
-    "backend": torchvision.models.mobilenet_v3_large(weights=torchvision.models.MobileNet_V3_Large_Weights.DEFAULT),
-    "backend_transform": torchvision.models.MobileNet_V3_Large_Weights.DEFAULT.transforms(),
-    "weight_path": "weights/alo"
-}
+CLASSES = ['bar-pub', 'grocery', 'restaurant', 'supermarket']
+
+# SETUP MODELs
+backend = torchvision.models.mobilenet_v3_large(weights=torchvision.models.MobileNet_V3_Large_Weights.DEFAULT)
+backend_transform = torchvision.models.MobileNet_V3_Large_Weights.DEFAULT.transforms()
+model = MobileSceneModel(backend, backend_transform, len(CLASSES))
+weight_path = "weights/alo"
+state_dict = torch.load(weight_path, map_location=torch.device('cpu'))
+model.load_state_dict(weight_path)
