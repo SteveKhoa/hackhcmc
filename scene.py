@@ -61,3 +61,15 @@ model = MobileSceneModel(backend, backend_transform, len(CLASSES))
 weight_path = "weights/alo"
 state_dict = torch.load(weight_path, map_location=torch.device('cpu'))
 model.load_state_dict(weight_path)
+
+# SETUP infer
+def infer(model, path, classes):
+    model.eval()
+    with torch.no_grad():
+        image = torchvision.io.read_image(path)
+        logits = model.forward(image)
+
+        argmax = torch.argmax(logits, dim=1)
+        pred = classes[argmax]
+    
+    return pred
