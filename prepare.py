@@ -4,7 +4,7 @@ import re
 
 DOWNLOADS_NEEDED = {
     "scene_augmented": "https://drive.google.com/file/d/14SkBeCkKfDOxRPWbMNZ3NUFSPWZ3beou/view?usp=sharing",
-    "scene_default": "https://drive.google.com/file/d/10UPSmVj5mm9T5P3emPf3Qcb5PDV79Ejq/view?usp=sharing",
+    "scene_standard": "https://drive.google.com/file/d/1I-P_bBTZAPbMCpoiKVQOBCfqJE6IAiuw/view?usp=sharing",
 }
 WEIGTHT_FOLDER = "weights/"
 os.makedirs(WEIGTHT_FOLDER, exist_ok=True)

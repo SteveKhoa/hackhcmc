@@ -60,7 +60,7 @@ CLASSES = ['bar-pub', 'grocery', 'restaurant', 'supermarket']
 backend = torchvision.models.mobilenet_v3_large(weights=torchvision.models.MobileNet_V3_Large_Weights.DEFAULT)
 backend_transform = torchvision.models.MobileNet_V3_Large_Weights.DEFAULT.transforms()
 model = MobileSceneModel(backend, backend_transform, len(CLASSES))
-weight_path = "weights/mobilenet.pth"
+weight_path = "weights/standard.pth"  # can use either augmented.pth or standard.pth
 state_dict = torch.load(weight_path, map_location=torch.device('cpu'))
 model.load_state_dict(state_dict)
 
