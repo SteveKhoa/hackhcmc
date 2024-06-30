@@ -1,6 +1,7 @@
 .venv
 data
-*.pth
+# *.pth
+./weights
 *.png
 *.jpg
 *.svg
