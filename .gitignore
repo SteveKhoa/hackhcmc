@@ -8,4 +8,3 @@ data
 *.webp
 *.zip
 .DS_Store
-*.ipynb
