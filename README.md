@@ -91,7 +91,7 @@
 
 ### --> Using source code
 1. Download source code 
-2. Create python virtual environment
+2. Create python virtual environment ( for MacOS )
 * cmd
   ```sh
     python3.10 -m venv. venv  
@@ -99,7 +99,7 @@
 3. Install python dependencies ( Make sure virtual environment turn on )
 * cmd
   ```sh
-    pip install -r requirement.txt  
+    pip install -r requirements.txt  
   ```
 4. There are 2 options: <br/>
    ##### a. Classify scene context
@@ -108,7 +108,7 @@
           python scene.py [path_to_image]
        ```
    ##### b. Object detection / Brand detection
-   - Follow the link to use this feature : 
+   - Follow the link to use this feature : <a href="https://github.com/SteveKhoa/hackhcmc/blob/main/main.ipynb">Follow here</a>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
