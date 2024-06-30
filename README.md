@@ -61,8 +61,8 @@
 <div align="center">
  <table>
   <tr>
-    <td><img src="https://github.com/VuDucTruong/FoodRecipeApp/assets/113105084/046623d1-56e9-4041-9408-1a053139942f" alt="Image 1 Description" width="300"/></td>
-    <td><img src="https://github.com/VuDucTruong/FoodRecipeApp/assets/113105084/908938fc-3926-463a-8403-0537167a13c1" alt="Image 2 Description" width="300"/></td>
+    <td><img src="https://github.com/SteveKhoa/hackhcmc/assets/113105084/198da34c-4ea0-429b-bc79-2cd6e9af9865" alt="Image 1 Description" width="500"/></td>
+    <td><img src="https://github.com/SteveKhoa/hackhcmc/assets/113105084/394d64ec-aeb6-478e-8a70-698522e3d1ec" alt="Image 2 Description" width="500"/></td>
   </tr>
 </table>
 </div>
@@ -87,47 +87,30 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-How to run the app ?
+*How to run the app ?*
 
-### Using source code
+### --> Using source code
 1. Download source code 
 2. Create python virtual environment
-* cmnd
+* cmd
   ```sh
     python3.10 -m venv. venv  
   ```
 3. Install python dependencies ( Make sure virtual environment turn on )
-* cmnd
+* cmd
   ```sh
     pip install -r requirement.txt  
   ```
-4. There are 2 options :
-   - Detect 
+4. There are 2 options: <br/>
+   ##### a. Classify scene context
+   - cmd
+       ```sh
+          python scene.py [path_to_image]
+       ```
+   ##### b. Object detection / Brand detection
+   - Follow the link to use this feature : 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-## Features
-
-- [x] Authorization
-  - [x]  Login/Register with email
-  - [x]  Login/Register with gmail 
-  - [x]  Forget password
-  - [x]  Quick Calculation
-- [x] Notification
-  - [x] Push notifications when a follower publish a recipe
-  - [x] Recive notifications realtime whenever a follower create a recipe  
-- [x] AI Generate Recipes
-  - [x] Generate a recipe through your ingredients
-- [x]  Multiple Language ( Vietnamese/English)
-- [x]  Like/Save recipe
-- [x]  Follow chefs
-- [x]  Search recipes or chefs by name
-- [x]  Suggest recipes through user status ( vegan or not )
-- [x]  Easily create your recipe and share for everyone
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- CONTACT -->
