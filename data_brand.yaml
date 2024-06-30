@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 7
+names: ['Bia-Viet', 'Heineken', 'Laure', 'Strong-bow', 'Tiger', 'Bivina', 'strong-bow']
+
+roboflow:
+  workspace: le-viet-tung
+  project: detect_label-dqfs9
+  version: 6
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/le-viet-tung/detect_label-dqfs9/dataset/6

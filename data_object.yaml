@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 12
+names: ['billboard', 'box', 'bucket', 'crate', 'fridge', 'glass bottle', 'glass cup', 'person', 'poster', 'promotional display', 'tin can', 'umbrella']
+
+roboflow:
+  workspace: le-viet-tung
+  project: obj-dect-will-work
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/le-viet-tung/obj-dect-will-work/dataset/1
